@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://dfq2iqhuccltx"]
+[gd_scene load_steps=6 format=3 uid="uid://dfq2iqhuccltx"]
 
 [ext_resource type="Texture2D" uid="uid://doghmovcgeltw" path="res://graphics/map.png" id="1_uwrxv"]
 [ext_resource type="PackedScene" uid="uid://dghd7rii024ea" path="res://scenes/player.tscn" id="2_yqjtg"]
 [ext_resource type="PackedScene" uid="uid://birpgxq4j4lbn" path="res://scenes/house.tscn" id="3_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://ba5keywqggssa" path="res://scenes/box_1.tscn" id="4_lbhrr"]
+[ext_resource type="PackedScene" uid="uid://duewh6kekgg4q" path="res://scenes/barricade.tscn" id="5_iywne"]
 
 [node name="Game" type="Node2D"]
 metadata/_edit_horizontal_guides_ = [647.0]
@@ -20,3 +21,57 @@ position = Vector2(57, 89)
 
 [node name="Box1" parent="." instance=ExtResource("4_lbhrr")]
 position = Vector2(143, 395)
+
+[node name="Barricade" parent="." instance=ExtResource("5_iywne")]
+position = Vector2(11, 412)
+
+[node name="Barricade2" parent="." instance=ExtResource("5_iywne")]
+position = Vector2(11, 422)
+
+[node name="Barricade3" parent="." instance=ExtResource("5_iywne")]
+position = Vector2(11, 432)
+
+[node name="Barricade4" parent="." instance=ExtResource("5_iywne")]
+position = Vector2(11, 443)
+
+[node name="Barricade5" parent="." instance=ExtResource("5_iywne")]
+position = Vector2(11, 454)
+
+[node name="Barricade6" parent="." instance=ExtResource("5_iywne")]
+position = Vector2(11, 465)
+
+[node name="Barricade7" parent="." instance=ExtResource("5_iywne")]
+position = Vector2(11, 474)
+
+[node name="Barricade8" parent="." instance=ExtResource("5_iywne")]
+position = Vector2(11, 485)
+
+[node name="Barricade9" parent="." instance=ExtResource("5_iywne")]
+position = Vector2(11, 495)
+
+[node name="Barricade10" parent="." instance=ExtResource("5_iywne")]
+position = Vector2(378, 413)
+
+[node name="Barricade11" parent="." instance=ExtResource("5_iywne")]
+position = Vector2(378, 423)
+
+[node name="Barricade12" parent="." instance=ExtResource("5_iywne")]
+position = Vector2(378, 433)
+
+[node name="Barricade13" parent="." instance=ExtResource("5_iywne")]
+position = Vector2(378, 444)
+
+[node name="Barricade14" parent="." instance=ExtResource("5_iywne")]
+position = Vector2(378, 455)
+
+[node name="Barricade15" parent="." instance=ExtResource("5_iywne")]
+position = Vector2(378, 466)
+
+[node name="Barricade16" parent="." instance=ExtResource("5_iywne")]
+position = Vector2(378, 475)
+
+[node name="Barricade17" parent="." instance=ExtResource("5_iywne")]
+position = Vector2(378, 486)
+
+[node name="Barricade18" parent="." instance=ExtResource("5_iywne")]
+position = Vector2(378, 496)
