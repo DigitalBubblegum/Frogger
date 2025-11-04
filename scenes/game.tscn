@@ -1,5 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://dfq2iqhuccltx"]
+[gd_scene load_steps=8 format=3 uid="uid://dfq2iqhuccltx"]
 
+[ext_resource type="Script" uid="uid://4vxvmd16aeo1" path="res://scenes/game.gd" id="1_iywne"]
 [ext_resource type="Texture2D" uid="uid://doghmovcgeltw" path="res://graphics/map.png" id="1_uwrxv"]
 [ext_resource type="PackedScene" uid="uid://dghd7rii024ea" path="res://scenes/player.tscn" id="2_yqjtg"]
 [ext_resource type="PackedScene" uid="uid://birpgxq4j4lbn" path="res://scenes/house.tscn" id="3_lnu2h"]
@@ -8,7 +9,11 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lbhrr"]
 size = Vector2(20, 643)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iywne"]
+size = Vector2(193, 32)
+
 [node name="Game" type="Node2D"]
+script = ExtResource("1_iywne")
 metadata/_edit_horizontal_guides_ = [647.0]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -43,3 +48,18 @@ shape = SubResource("RectangleShape2D_lbhrr")
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(-7, 327)
 shape = SubResource("RectangleShape2D_lbhrr")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(210.5, 119)
+shape = SubResource("RectangleShape2D_iywne")
+debug_color = Color(0.9372261, 0.15289462, 0.50362366, 0.41960785)
+
+[node name="Timer" type="Node" parent="."]
+
+[node name="CarTimer" type="Timer" parent="Timer"]
+wait_time = 4.0
+autostart = true
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
