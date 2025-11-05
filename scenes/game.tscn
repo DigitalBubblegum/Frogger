@@ -14,7 +14,8 @@ size = Vector2(193, 32)
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_iywne")
-metadata/_edit_horizontal_guides_ = [647.0]
+metadata/_edit_horizontal_guides_ = [647.0, 6.0, 646.0]
+metadata/_edit_vertical_guides_ = [387.0]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(195, 326)
@@ -42,7 +43,7 @@ rotation = 1.5707964
 shape = SubResource("RectangleShape2D_lbhrr")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(397, 328)
+position = Vector2(397, 327)
 shape = SubResource("RectangleShape2D_lbhrr")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]

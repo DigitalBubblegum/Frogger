@@ -102,10 +102,10 @@ script = ExtResource("1_g2els")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(3, 3)
-limit_left = 1
-limit_top = 7
+limit_left = 3
+limit_top = 6
 limit_right = 387
-limit_bottom = 647
+limit_bottom = 646
 position_smoothing_enabled = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
