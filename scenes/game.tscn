@@ -1,16 +1,20 @@
-[gd_scene load_steps=8 format=3 uid="uid://dfq2iqhuccltx"]
+[gd_scene load_steps=10 format=3 uid="uid://dfq2iqhuccltx"]
 
 [ext_resource type="Script" uid="uid://4vxvmd16aeo1" path="res://scenes/game.gd" id="1_iywne"]
 [ext_resource type="Texture2D" uid="uid://doghmovcgeltw" path="res://graphics/map.png" id="1_uwrxv"]
 [ext_resource type="PackedScene" uid="uid://dghd7rii024ea" path="res://scenes/player.tscn" id="2_yqjtg"]
 [ext_resource type="PackedScene" uid="uid://birpgxq4j4lbn" path="res://scenes/house.tscn" id="3_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://ba5keywqggssa" path="res://scenes/box_1.tscn" id="4_lbhrr"]
+[ext_resource type="Texture2D" uid="uid://boj6kq1t4mduj" path="res://graphics/objects/tree potted.png" id="6_p57ef"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lbhrr"]
 size = Vector2(20, 643)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iywne"]
 size = Vector2(193, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u5sy4"]
+size = Vector2(12, 19)
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_iywne")
@@ -20,26 +24,28 @@ metadata/_edit_vertical_guides_ = [387.0]
 [node name="BG" type="Sprite2D" parent="."]
 position = Vector2(195, 326)
 texture = ExtResource("1_uwrxv")
+metadata/_edit_lock_ = true
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="Walls" type="StaticBody2D" parent="."]
 collision_layer = 8
 collision_mask = 0
+metadata/_edit_lock_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls"]
 position = Vector2(216, 656)
 rotation = 1.5707964
 shape = SubResource("RectangleShape2D_lbhrr")
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Walls"]
 position = Vector2(214, -4)
 rotation = 1.5707964
 shape = SubResource("RectangleShape2D_lbhrr")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls"]
 position = Vector2(397, 327)
 shape = SubResource("RectangleShape2D_lbhrr")
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Walls"]
 position = Vector2(-7, 327)
 shape = SubResource("RectangleShape2D_lbhrr")
 
@@ -58,6 +64,7 @@ debug_color = Color(0.9372261, 0.15289462, 0.50362366, 0.41960785)
 autostart = true
 
 [node name="CarStartPositions" type="Node2D" parent="."]
+metadata/_edit_lock_ = true
 
 [node name="Marker2D" type="Marker2D" parent="CarStartPositions"]
 position = Vector2(-9, 487)
@@ -82,6 +89,79 @@ position = Vector2(200, 396)
 
 [node name="Box1" parent="Objects" instance=ExtResource("4_lbhrr")]
 position = Vector2(143, 395)
+
+[node name="StaticObjects" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="TreePotted" type="Sprite2D" parent="StaticObjects"]
+position = Vector2(58, 363)
+texture = ExtResource("6_p57ef")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="StaticObjects/TreePotted"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticObjects/TreePotted/StaticBody2D"]
+position = Vector2(0, 3.5)
+shape = SubResource("RectangleShape2D_u5sy4")
+
+[node name="TreePotted2" type="Sprite2D" parent="StaticObjects"]
+position = Vector2(142, 362)
+texture = ExtResource("6_p57ef")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="StaticObjects/TreePotted2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticObjects/TreePotted2/StaticBody2D"]
+position = Vector2(0, 3.5)
+shape = SubResource("RectangleShape2D_u5sy4")
+
+[node name="TreePotted3" type="Sprite2D" parent="StaticObjects"]
+position = Vector2(311, 360)
+texture = ExtResource("6_p57ef")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="StaticObjects/TreePotted3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticObjects/TreePotted3/StaticBody2D"]
+position = Vector2(0, 3.5)
+shape = SubResource("RectangleShape2D_u5sy4")
+
+[node name="TreePotted4" type="Sprite2D" parent="StaticObjects"]
+position = Vector2(60, 242)
+texture = ExtResource("6_p57ef")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="StaticObjects/TreePotted4"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticObjects/TreePotted4/StaticBody2D"]
+position = Vector2(0, 3.5)
+shape = SubResource("RectangleShape2D_u5sy4")
+
+[node name="TreePotted5" type="Sprite2D" parent="StaticObjects"]
+position = Vector2(170, 243)
+texture = ExtResource("6_p57ef")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="StaticObjects/TreePotted5"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticObjects/TreePotted5/StaticBody2D"]
+position = Vector2(0, 3.5)
+shape = SubResource("RectangleShape2D_u5sy4")
+
+[node name="TreePotted6" type="Sprite2D" parent="StaticObjects"]
+position = Vector2(330, 242)
+texture = ExtResource("6_p57ef")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="StaticObjects/TreePotted6"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticObjects/TreePotted6/StaticBody2D"]
+position = Vector2(0, 3.5)
+shape = SubResource("RectangleShape2D_u5sy4")
+
+[node name="TreePotted7" type="Sprite2D" parent="StaticObjects"]
+position = Vector2(300, 242)
+texture = ExtResource("6_p57ef")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="StaticObjects/TreePotted7"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticObjects/TreePotted7/StaticBody2D"]
+position = Vector2(0, 3.5)
+shape = SubResource("RectangleShape2D_u5sy4")
 
 [connection signal="body_entered" from="FinishArea" to="." method="_on_area_2d_body_entered"]
 [connection signal="timeout" from="Timer/CarTimer" to="." method="_on_car_timer_timeout"]
