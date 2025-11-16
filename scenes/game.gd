@@ -1,6 +1,6 @@
 extends Node2D
 var car_scene: PackedScene = preload("res://scenes/car.tscn")
-
+var score: int = 0
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -23,3 +23,8 @@ func _on_car_timer_timeout() -> void:
 
 func go_to_title(body):
 	print('player car collsion')
+
+
+func _on_score_timer_timeout() -> void:
+	score+=1
+	$HiScore/Label.set_text('SCORE: '+str(score))

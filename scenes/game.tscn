@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://dfq2iqhuccltx"]
+[gd_scene load_steps=26 format=3 uid="uid://dfq2iqhuccltx"]
 
 [ext_resource type="Script" uid="uid://4vxvmd16aeo1" path="res://scenes/game.gd" id="1_iywne"]
 [ext_resource type="Texture2D" uid="uid://doghmovcgeltw" path="res://graphics/map.png" id="1_uwrxv"]
@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://b778fphjcav0" path="res://graphics/objects/light.png" id="13_ssvqc"]
 [ext_resource type="Texture2D" uid="uid://b3jchn0artiyt" path="res://graphics/objects/line.png" id="14_264po"]
 [ext_resource type="Texture2D" uid="uid://cfe22lwgaf1k2" path="res://graphics/objects/traffic.png" id="15_1kice"]
+[ext_resource type="FontFile" uid="uid://hqpa84d2dqvp" path="res://fonts/Better VCR 9.0.1.ttf" id="16_ca42v"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lbhrr"]
 size = Vector2(20, 643)
@@ -89,6 +90,9 @@ debug_color = Color(0.9372261, 0.15289462, 0.50362366, 0.41960785)
 
 [node name="CarTimer" type="Timer" parent="Timer"]
 wait_time = 0.17
+autostart = true
+
+[node name="ScoreTimer" type="Timer" parent="Timer"]
 autostart = true
 
 [node name="CarStartPositions" type="Node2D" parent="."]
@@ -314,5 +318,19 @@ texture = ExtResource("15_1kice")
 position = Vector2(4, 4)
 shape = SubResource("SegmentShape2D_ca42v")
 
+[node name="HiScore" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="HiScore"]
+offset_left = 6.0
+offset_top = 10.0
+offset_right = 119.0
+offset_bottom = 48.0
+theme_override_colors/font_color = Color(0.90588236, 1, 0.93333334, 1)
+theme_override_colors/font_outline_color = Color(0.92941177, 0.627451, 0.19215687, 1)
+theme_override_fonts/font = ExtResource("16_ca42v")
+theme_override_font_sizes/font_size = 30
+text = "SCORE"
+
 [connection signal="body_entered" from="FinishArea" to="." method="_on_area_2d_body_entered"]
 [connection signal="timeout" from="Timer/CarTimer" to="." method="_on_car_timer_timeout"]
+[connection signal="timeout" from="Timer/ScoreTimer" to="." method="_on_score_timer_timeout"]
