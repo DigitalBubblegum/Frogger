@@ -13,8 +13,6 @@ func _physics_process(_delta: float) -> void:
 	velocity = direction * speed
 	animation()
 	move_and_slide()
-	if(Input.is_action_just_pressed("confirm")):
-		print("something")
 	
 func animation():
 	if direction:
