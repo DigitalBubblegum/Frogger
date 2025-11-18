@@ -6,6 +6,6 @@ TODO
 
 - [ ] Add more levels
 - [ ] Add some sounds for the car
-- [ ] Add another screen for game over
+- [x] Add another screen for game over
 - [ ] Add a victory screen
 - [ ] Arcade style high score

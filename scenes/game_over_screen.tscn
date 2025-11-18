@@ -1,0 +1,78 @@
+[gd_scene load_steps=3 format=3 uid="uid://bb27dyid3ecls"]
+
+[ext_resource type="Script" uid="uid://ddbt1rogfsndu" path="res://scenes/game_over_screen.gd" id="1_61w2s"]
+[ext_resource type="FontFile" uid="uid://dr201ov4c76pb" path="res://fonts/Crackman.otf" id="1_iwahs"]
+
+[node name="GameOverScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_61w2s")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.92941177, 0.627451, 0.19215687, 1)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -143.0
+offset_top = -165.0
+offset_right = 140.0
+offset_bottom = -104.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.15294118, 0.16078432, 0.27450982, 1)
+theme_override_colors/font_outline_color = Color(0.90588236, 1, 0.93333334, 1)
+theme_override_fonts/font = ExtResource("1_iwahs")
+theme_override_font_sizes/font_size = 50
+text = "GAME OVER"
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -96.0
+offset_top = -378.0
+offset_right = 107.0
+offset_bottom = -323.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.15294118, 0.16078432, 0.27450982, 1)
+theme_override_colors/font_outline_color = Color(0.90588236, 1, 0.93333334, 1)
+theme_override_fonts/font = ExtResource("1_iwahs")
+theme_override_font_sizes/font_size = 45
+text = "SCORE: 0"
+
+[node name="Label3" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -227.0
+offset_top = -279.0
+offset_right = 240.0
+offset_bottom = -230.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.15294118, 0.16078432, 0.27450982, 1)
+theme_override_fonts/font = ExtResource("1_iwahs")
+theme_override_font_sizes/font_size = 40
+text = "PRESS SPACE TO REPLAY"

@@ -30,4 +30,4 @@ func go_to_title(_body):
 	call_deferred("change_scene")
 	
 func change_scene():
-	get_tree().change_scene_to_file("res://scenes/title.tscn")
+	get_tree().change_scene_to_file("res://scenes/game_over_screen.tscn")
